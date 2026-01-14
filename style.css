@@ -1,0 +1,160 @@
+/* ---------- Professional Game Dev Variables ---------- */
+:root {
+    --bg-dark: #0a0b10;
+    --bg-card: rgba(255, 255, 255, 0.05);
+    --accent-primary: #ff3366;
+    --accent-secondary: #ff7a18;
+    --text-main: #e0e6ed;
+    --text-dim: #94a3b8;
+    --neon-shadow: 0 0 20px rgba(255, 51, 102, 0.4);
+    --transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* ---------- Base ---------- */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: var(--bg-dark);
+    /* Subtle radial glow to make the center pop */
+    background-image: radial-gradient(circle at center, #1a1c2c 0%, #0a0b10 100%);
+    font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+    color: var(--text-main);
+    overflow-x: hidden;
+}
+
+/* ---------- Header ---------- */
+.Header {
+    display: flex;
+    justify-content: center;
+    padding-top: 60px;
+}
+
+@font-face {
+    font-family: 'gaming';
+    src: url('assets/fonts/dpcomic.ttf') format('truetype');
+}
+
+.Header-text {
+    height: 90px;
+    width: 480px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'gaming';
+    font-size: 52px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #ffffff;
+
+    /* Cyberpunk Gradient */
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    
+    /* Beveled Edge Look */
+    border-radius: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: var(--neon-shadow), inset 0 0 10px rgba(255,255,255,0.2);
+
+    /* Removed underline for a cleaner "Logo" look */
+    text-decoration: none;
+    cursor: default;
+    transition: var(--transition-smooth);
+}
+
+.Header-text:hover {
+    transform: scale(1.05) rotate(-1deg);
+    filter: brightness(1.2);
+    box-shadow: 0 0 40px rgba(255, 51, 102, 0.6);
+}
+
+/* ---------- Games Layout ---------- */
+.games {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 40px;
+    padding: 80px 10vw;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+/* ---------- Game Card ---------- */
+.games-card {
+    position: relative;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 350px;
+    /* Glassmorphism Effect */
+    background: var(--bg-card);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    
+    overflow: hidden;
+    transition: var(--transition-smooth);
+}
+
+/* Subtle border glow on hover */
+.games-card:hover {
+    transform: translateY(-12px);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--accent-primary);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(255, 51, 102, 0.2);
+}
+
+/* ---------- Image Styling ---------- */
+.games-card-img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 16px;
+    margin-bottom: 24px;
+    
+    /* Makes images pop */
+    filter: grayscale(20%) contrast(1.1);
+    transition: var(--transition-smooth);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.games-card:hover .games-card-img {
+    filter: grayscale(0%) contrast(1.2);
+    transform: scale(1.02);
+}
+
+/* ---------- Text Content (Optional Enhancement) ---------- */
+/* If you add titles/descriptions, use these: */
+.games-card h3 {
+    margin: 0 0 10px 0;
+    font-size: 24px;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.games-card p {
+    color: var(--text-dim);
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* ---------- Scrollbar (The Pro Detail) ---------- */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-dark);
+}
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-primary);
+}

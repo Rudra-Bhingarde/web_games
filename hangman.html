@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro Hangman</title>
+    <link rel="stylesheet" href="hangmanStyle.css">
+</head>
+<body>
+
+    <div class="game-container">
+        <header class="Header">
+            <div class="Header-text">Hangman</div>
+        </header>
+        <div id="loader" class="loader-overlay">
+    <div class="spinner"></div>
+    <p>INITIALIZING ASSETS...</p>
+</div>
+        <div class="game-box">
+            <div class="visual-section">
+                <svg id="hangman-svg" viewBox="0 0 200 250">
+                    <line x1="20" y1="230" x2="180" y2="230" stroke="white" stroke-width="4" />
+                    <line x1="40" y1="230" x2="40" y2="20" stroke="white" stroke-width="4" />
+                    <line x1="40" y1="20" x2="130" y2="20" stroke="white" stroke-width="4" />
+                    <line x1="130" y1="20" x2="130" y2="50" stroke="white" stroke-width="4" />
+                    
+                    <circle id="head" cx="130" cy="70" r="20" class="man-part" />
+                    <line id="body" x1="130" y1="90" x2="130" y2="150" class="man-part" />
+                    <line id="left-arm" x1="130" y1="110" x2="100" y2="130" class="man-part" />
+                    <line id="right-arm" x1="130" y1="110" x2="160" y2="130" class="man-part" />
+                    <line id="left-leg" x1="130" y1="150" x2="110" y2="190" class="man-part" />
+                    <line id="right-leg" x1="130" y1="150" x2="150" y2="190" class="man-part" />
+                </svg>
+            </div>
+
+            <div class="input-section">
+                <div id="word-display" class="word-display"></div>
+                <p class="hintText">Hint: <span id="hint">---</span></p>
+                <p class="guessesText">Mistakes: <span id="mistakes">0</span> / 6</p>
+                
+                <div id="keyboard" class="keyboard"></div>
+
+                <button id="reset-btn" class="reset-btn">New Game</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h2 id="modal-title">You Win!</h2>
+            <p id="modal-msg"></p>
+            <button onclick="initGame()" class="reset-btn">Play Again</button>
+        </div>
+    </div>
+
+    <script src="hangmanScript.js"></script>
+</body>
+</html>
