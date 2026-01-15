@@ -1,45 +1,64 @@
-# 🦾 Cyber Studio: Neural Games Collection
+# 🦾 Cyber Studio: The Neural Suite
 
-A suite of high-fidelity, browser-based games featuring a **Cyberpunk/Neon** aesthetic. Built with a professional "Pro-Studio" framework, these games focus on memory, logic, and knowledge.
+A high-fidelity collection of 5 browser-based games featuring a **Cyberpunk/Neon** aesthetic. This suite is engineered for high performance, responsive scaling, and immersive visual feedback.
 
 ---
 
-## 🕹️ The Games
+## 🕹️ The Game Library
 
-### 1. 🧠 Neural Match (Memory)
-**Goal:** Synchronize your biological RAM by finding matching pairs.
-* **Play:** Flip nodes to reveal assets. Match all pairs to clear the board.
-* **Tech:** 3D CSS transforms and perspective mapping.
+### 1. 🧬 Cyber Hangman
+**"Decrypt the hidden string."**
+* **Goal:** Guess the letters of a hidden word before the neural asset is fully deconstructed.
+* **How to Play:** Use the on-screen terminal keyboard to select letters. Every error adds a piece to the visual hangman.
+* **Tech:** Dynamic array mapping and CSS state-based animations.
 
 
-### 2. 🧩 Cyber Jigsaw (Puzzle)
-**Goal:** Reconstruct scrambled neural blueprints.
-* **Play:** Drag pieces from the Repository into the grid. Pieces only "snap" if coordinates are mathematically correct.
+### 2. 🧩 Cyber Jigsaw
+**"Assemble the visual data."**
+* **Goal:** Drag and drop scrambled image slices into their correct coordinates.
+* **How to Play:** Grab a piece from the **Repository** (Tray) and snap it into the board. Pieces lock only when mathematically aligned.
 * **Tech:** HTML5 Drag & Drop API with coordinate validation.
 
 
-### 3. 📝 Neural Trivia (Knowledge)
-**Goal:** Query the global database to test your IQ.
-* **Play:** Choose a topic (Animals, Science, etc.) and answer 10 segments correctly.
-* **Tech:** Dynamic OpenTDB API integration with HTML entity sanitization.
+### 3. 🏂 Cyber Slider
+**"Reorder the logic fragments."**
+* **Goal:** Slide image tiles using a single empty space to reconstruct the blueprint.
+* **How to Play:** Click tiles adjacent to the empty slot to move them. Organize them in order to complete the image.
+* **Tech:** CSS Grid manipulation and Manhattan-distance logic.
+
+
+### 4. 🧠 Neural Match (Memory)
+**"Synchronize your biological RAM."**
+* **Goal:** Find matching pairs of hidden cartoon animal assets.
+* **How to Play:** Flip two nodes at a time. If they match, they glow; if not, they reset. Achieve 100% sync to win.
+* **Tech:** 3D CSS transforms and `perspective` depth logic.
+
+
+### 5. 📝 Neural Trivia (Knowledge)
+**"Query the global database."**
+* **Goal:** Answer 10 randomized segments correctly based on a chosen topic.
+* **How to Play:** Select a category and difficulty. Click the correct option to earn stars. Wrong answers trigger a system shake.
+* **Tech:** Asynchronous Fetch API with OpenTDB integration and HTML sanitization.
 
 
 ---
 
-## 🛠️ Studio Framework Features
-* **Top-Anchor Scaling:** Automatically "shrink-wraps" the UI to fit any screen size (Laptops/Tablets) while keeping headers visible.
-* **Visual Juice:** CRT Scanline filters, 3D flips, and screen-shake feedback for errors.
-* **Dynamic Content:** Real-time fetching of assets (images/questions) via external APIs.
+## 🛠️ Global Framework Features
+* **Top-Anchor Scaling:** Advanced engine that ensures games fit any screen size (Laptops/Tablets) while keeping the header locked in view.
+* **CRT Overlay:** Retro scanline and RGB-shift filters for an immersive terminal atmosphere.
+* **Haptic UI:** Visual "Screen Shake" on errors and "Pulse Glow" on successes.
+* **Glassmorphism:** Modern frosted-glass UI with neon-variable accents.
 
 ---
 
-## 🚀 Quick Start
-1. **Clone the repo:** `git clone https://github.com/your-username/cyber-studio.git`
-2. **Run:** Open any `index.html` in a modern browser.
-3. **Note:** No dependencies or installation required.
+## 🚀 Installation & Usage
+1. **Clone:** `git clone https://github.com/your-username/cyber-studio.git`
+2. **Launch:** Open the `index.html` file in any modern web browser.
+3. **No Setup:** Zero dependencies. 100% Vanilla JS, HTML, and CSS.
 
 ---
 
 ## 👨‍💻 Developer
 **Rudra Bhingarde**
-*SPPU IT Engineering *
+*IT Engineering Student | SPPU*
+*Specializing in Machine Learning & Full-Stack UI*
