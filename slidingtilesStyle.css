@@ -1,0 +1,256 @@
+/* ================================================================
+   PROFESSIONAL GAME STUDIO - CONSOLIDATED STYLESHEET
+   Project: Cyber Games Suite
+================================================================ 
+*/
+
+:root {
+    /* Color Palette */
+    --bg-dark: #0a0b10;
+    --bg-card: rgba(255, 255, 255, 0.05);
+    --accent: #ff3366;
+    --accent-secondary: #ff7a18;
+    --accent-glow: rgba(255, 51, 102, 0.4);
+    
+    /* Text Colors */
+    --text-main: #e0e6ed;
+    --text-dim: #94a3b8;
+    
+    /* Transitions & FX */
+    --transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    --glass-blur: blur(15px);
+}
+
+/* ---------- Base ---------- */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: var(--bg-dark);
+    background-image: radial-gradient(circle at center, #1a1c2c 0%, #0a0b10 100%);
+    font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+    color: var(--text-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+/* ---------- Header & Title ---------- */
+.Header {
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+    margin-bottom: 30px;
+}
+
+@font-face {
+    font-family: 'gaming';
+    src: url('assets/fonts/dpcomic.ttf') format('truetype');
+}
+
+.Header-text {
+    position: relative;
+    height: 90px;
+    width: 480px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'gaming', sans-serif;
+    font-size: 58px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #ffffff;
+
+    /* The Professional Studio Skew */
+    transform: skewX(-12deg);
+    
+    /* Animated Gradient Background */
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-secondary) 50%, var(--accent) 100%);
+    background-size: 200% auto;
+    animation: titleShimmer 3s linear infinite;
+
+    /* Depth Borders */
+    border-left: 8px solid #fff;
+    border-right: 8px solid #fff;
+    border-top: 2px solid rgba(255,255,255,0.3);
+    border-bottom: 2px solid rgba(0,0,0,0.3);
+
+    /* Neon Glow & Depth Shadow */
+    box-shadow: 
+        10px 10px 0px rgba(255, 51, 102, 0.2),
+        0 0 30px var(--accent-glow);
+
+    transition: var(--transition-smooth);
+    cursor: default;
+    user-select: none;
+    
+    -webkit-font-smoothing: antialiased;
+}
+
+.Header-text:hover {
+    transform: skewX(-12deg) scale(1.05) translateY(-5px);
+    box-shadow: 15px 15px 0px rgba(255, 51, 102, 0.3), 0 0 50px var(--accent-glow);
+    filter: brightness(1.1);
+}
+
+@keyframes titleShimmer {
+    0% { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+
+/* ---------- Main Game Layout ---------- */
+.game-box {
+    display: flex;
+    gap: 40px;
+    background: var(--bg-card);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 32px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+    position: relative;
+}
+
+/* ---------- Puzzle Grid Logic ---------- */
+.puzzle-grid {
+    display: grid;
+    grid-template-columns: repeat(var(--grid-size, 3), 1fr);
+    gap: 6px;
+    width: 450px;
+    height: 450px;
+    background: rgba(0,0,0,0.4);
+    border: 2px solid rgba(255,255,255,0.05);
+    padding: 6px;
+    border-radius: 16px;
+}
+
+.tile {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1/1;
+    background-image: var(--puzzle-image);
+    background-size: 450px 450px;
+    /* Math for background slicing */
+    background-position: 
+        calc((var(--x-pos) * -100%) / (var(--grid-size) - 1)) 
+        calc((var(--y-pos) * -100%) / (var(--grid-size) - 1));
+    
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    filter: saturate(1.2) contrast(1.1);
+}
+
+.tile:hover {
+    z-index: 2;
+    transform: scale(1.03) rotate(1deg);
+    border-color: var(--accent);
+    box-shadow: 0 0 20px var(--accent-glow);
+    filter: saturate(1.4) brightness(1.2);
+}
+
+.tile.empty {
+    background: none !important;
+    border: 2px dashed rgba(255,255,255,0.15);
+    cursor: default;
+    pointer-events: none;
+}
+
+/* ---------- UI Stats & Buttons ---------- */
+.info-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    min-width: 200px;
+}
+
+.stat-box {
+    background: rgba(255,255,255,0.03);
+    padding: 12px;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.stat-box h3 { margin: 0; font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; }
+.stat-box span { font-size: 26px; font-weight: 800; color: var(--accent); font-variant-numeric: tabular-nums; }
+
+.preview-container { text-align: center; margin-top: 10px; }
+#preview-img {
+    width: 130px; height: 130px; object-fit: cover;
+    border-radius: 10px; border: 2px solid rgba(255,255,255,0.1);
+    filter: grayscale(0.6); transition: 0.4s;
+}
+.game-box:hover #preview-img { filter: grayscale(0); border-color: var(--accent); }
+
+.neon-btn {
+    padding: 16px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+    border: none; border-radius: 12px; color: white; font-weight: bold;
+    font-size: 14px; text-transform: uppercase; letter-spacing: 1.5px; 
+    cursor: pointer; transition: var(--transition-smooth);
+    margin-top: 10px;
+}
+
+.neon-btn:hover {
+    box-shadow: 0 0 25px var(--accent-glow);
+    transform: translateY(-3px);
+    filter: brightness(1.1);
+}
+
+/* ---------- Overlay System (Loader & Modals) ---------- */
+.loader-overlay, .modal {
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 11, 16, 0.95);
+    backdrop-filter: blur(20px);
+    display: none; /* Controlled by JS */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    border-radius: 32px;
+}
+
+.spinner {
+    width: 60px; height: 60px;
+    border: 5px solid rgba(255, 255, 255, 0.1);
+    border-left-color: var(--accent);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.loader-overlay p {
+    color: var(--accent);
+    letter-spacing: 4px;
+    font-size: 14px;
+    font-weight: 900;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+.modal-content {
+    background: #1a1c2c;
+    padding: 40px;
+    border-radius: 24px;
+    text-align: center;
+    border: 2px solid var(--accent);
+    box-shadow: 0 0 40px rgba(255, 51, 102, 0.3);
+}
+
+/* ---------- Custom Scrollbar ---------- */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg-dark); }
+::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
