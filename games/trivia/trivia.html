@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neural Trivia | Cyber Studio</title>
+    <link rel="stylesheet" href="trivia.css">
+</head>
+<body>
+    <div class="crt-overlay"></div>
+
+    <div class="game-container">
+        <header class="Header">
+            <div class="Header-text">NEURAL TRIVIA</div>
+        </header>
+
+        <div id="scale-wrapper">
+            <div id="game-box" class="game-box">
+                
+                <div class="quiz-section">
+                    <div class="question-header">
+                        <span id="category-tag" class="badge">TOPIC: LOADING...</span>
+                        <span id="level-tag" class="badge">LEVEL: JUNIOR</span>
+                    </div>
+                    <h2 id="question-text">Syncing Neural Database...</h2>
+                    <div id="options-container" class="options-grid">
+                        </div>
+                </div>
+
+                <div class="info-section">
+                    <div class="stat-box">
+                       <h3>Score</h3>
+                       <span id="score-text">0</span>
+                    </div>
+                    <div class="stat-box">
+                       <h3>Question</h3>
+                       <span id="question-count">0/10</span>
+                    </div>
+                    
+                    <div class="stat-box">
+                        <h3>Challenge</h3>
+                        <select id="difficulty-select" class="cyber-select">
+                            <option value="easy" selected>Junior (Easy)</option>
+                            <option value="medium">Senior (Medium)</option>
+                            <option value="hard">Elite (Hard)</option>
+                        </select>
+                    </div>
+
+                    <div class="stat-box">
+                        <h3>Topic</h3>
+                        <select id="category-select" class="cyber-select">
+                            <option value="27">Animals 🦁</option>
+                            <option value="32">Cartoons 📺</option>
+                            <option value="17">Science 🧪</option>
+                            <option value="22">Geography 🗺️</option>
+                            <option value="9">General Knowledge 🌍</option>
+                        </select>
+                    </div>
+
+                    <button id="next-btn" class="neon-btn" style="display: none;">Next Segment ➔</button>
+                    <button id="reset-game-btn" class="neon-btn">Re-Sync System</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="loader" class="loader-overlay">
+        <div class="spinner"></div>
+        <p>REPLICATING BRAIN ASSETS...</p>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h2>EVALUATION COMPLETE</h2>
+            <p id="modal-msg"></p>
+            <button id="modal-reset" class="neon-btn">New Session</button>
+        </div>
+    </div>
+
+    <script src="trivia.js"></script>
+</body>
+</html>
