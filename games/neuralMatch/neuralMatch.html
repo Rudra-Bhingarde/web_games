@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neural Match | Cyber Studio</title>
+    <link rel="stylesheet" href="neuralMatch.css">
+</head>
+<body>
+    <div class="crt-overlay"></div>
+
+    <div class="game-container">
+        <header class="Header">
+            <div class="Header-text">NEURAL MATCH</div>
+        </header>
+
+        <div id="scale-wrapper">
+            <div id="game-box" class="game-box">
+                <div id="memory-grid" class="memory-grid"></div>
+
+                <div class="info-section">
+                    <div class="stat-box">
+                       <h3>Attempts</h3>
+                       <span id="move-count">0</span>
+                    </div>
+                    <div class="stat-box">
+                       <h3>Accuracy</h3>
+                       <span id="accuracy-text">0%</span>
+                    </div>
+                    
+                    <div class="stat-box">
+                        <h3>Difficulty</h3>
+                        <select id="difficulty-select" class="cyber-select">
+                            <option value="8">Easy (4x4)</option>
+                            <option value="12" selected>Medium (4x6)</option>
+                            <option value="18">Elite (6x6)</option>
+                        </select>
+                    </div>
+
+                    <button id="new-game-btn" class="neon-btn">Reset Synapses</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="loader" class="loader-overlay">
+        <div class="spinner"></div>
+        <p>CALIBRATING NEURAL ASSETS...</p>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h2>SYNC COMPLETE</h2>
+            <p id="modal-msg"></p>
+            <button id="modal-reset" class="neon-btn">Re-Initialize</button>
+        </div>
+    </div>
+
+    <script src="neuralMatch.js"></script>
+</body>
+</html>

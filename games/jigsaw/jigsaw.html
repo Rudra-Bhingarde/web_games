@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Jigsaw - Pro Edition</title>
+    <link rel="stylesheet" href="jigsawStyle.css">
+</head>
+<body>
+
+    <div class="game-container">
+        <header class="Header">
+            <div class="Header-text">CYBER JIGSAW</div>
+        </header>
+
+        <div class="game-box main-layout">
+            <div class="tray-section">
+                <h3>PIECE REPOSITORY</h3>
+                <div id="piece-tray" class="piece-tray"></div>
+            </div>
+
+            <div class="board-section">
+                <div id="jigsaw-board" class="jigsaw-board"></div>
+            </div>
+
+            <div class="info-section">
+                <div class="stat-box">
+                   <h3>Completion</h3>
+                   <span id="progress-text">0%</span>
+                </div>
+                <div class="preview-container">
+                    <p>Target Blueprint:</p>
+                    <img id="preview-img" src="" alt="Target">
+                </div>
+                <button id="new-game-btn" class="neon-btn">New Blueprint</button>
+                <div class="stat-box">
+                    <h3>Difficulty</h3>
+                    <select id="difficulty-select" class="cyber-select">
+                        <option value="3">Easy (3x3)</option>
+                        <option value="4" selected>Standard (4x4)</option>
+                        <option value="5">Elite (5x5)</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="loader" class="loader-overlay">
+        <div class="spinner"></div>
+        <p>REPLICATING PIXELS...</p>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h2>ASSEMBLY COMPLETE</h2>
+            <p id="modal-msg"></p>
+            <button id="reset-btn" class="neon-btn">Next Objective</button>
+        </div>
+    </div>
+
+    <script src="jigsawScript.js"></script>
+</body>
+</html>
