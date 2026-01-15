@@ -61,4 +61,3 @@ A high-fidelity collection of 5 browser-based games featuring a **Cyberpunk/Neon
 ## 👨‍💻 Developer
 **Rudra Bhingarde**
 *IT Engineering Student | SPPU*
-*Specializing in Machine Learning & Full-Stack UI*
